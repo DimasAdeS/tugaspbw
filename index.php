@@ -15,18 +15,31 @@ include 'koneksi.php';
     <style>
         /* Gaya tambahan */
         body {
-            background-color: #f8f9fa;
+            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            padding-top: 20px;
         }
 
         .container {
             padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            max-width: 100vw;
+            height: 100vh;
+            overflow: auto;
         }
 
         h1 {
-            color: #343a40;
+            color: #333333;
             text-align: center;
             margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333333;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
 
         .search-container {
@@ -34,12 +47,50 @@ include 'koneksi.php';
             margin-bottom: 20px;
         }
 
+        .form-inline {
+            justify-content: center;
+        }
+
+        .form-control {
+            width: 70vw;
+            max-width: 300px;
+            border-radius: 20px;
+        }
+
+        .btn-primary {
+            border-radius: 20px;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .menu-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .btn-success {
+            border-radius: 20px;
+            background-color: #28a745;
+            border-color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
         .transaction-list {
             margin-top: 40px;
         }
 
         .transaction-item {
-            background-color: #fff;
+            background-color: #ffffff;
             border: 1px solid #dee2e6;
             padding: 20px;
             margin-bottom: 20px;
@@ -75,17 +126,8 @@ include 'koneksi.php';
         }
 
         .scroll-table {
-            max-height: 200px;
+            max-height: 60vh;
             overflow-y: auto;
-        }
-
-        .menu-links {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .menu-links a {
-            margin-bottom: 10px;
         }
 
         .statistics {
@@ -110,63 +152,32 @@ include 'koneksi.php';
         .btn {
             border-radius: 20px;
         }
-
-        .btn-success {
-            background-color: #28a745;
-            border-color: #28a745;
-        }
-
-        .btn-success:hover {
-            background-color: #218838;
-            border-color: #1e7e34;
-        }
-
-        .btn-info {
-            background-color: #17a2b8;
-            border-color: #17a2b8;
-        }
-
-        .btn-info:hover {
-            background-color: #138496;
-            border-color: #117a8b;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="mt-5">Selamat Datang di PT SPIL Logistik</h1>
+        <h1>Selamat Datang di PT SPIL Logistik</h1>
 
         <!-- Pencarian atau Filter Transaksi -->
         <div class="search-container">
-            <!-- Pesan pencarian -->
-            <!-- Form pencarian -->
             <form action="search.php" method="get" class="form-inline">
                 <input type="text" class="form-control mr-2" placeholder="Cari transaksi..." name="query">
                 <button type="submit" class="btn btn-primary">Cari</button>
             </form>
         </div>
 
-
         <!-- Link atau Tombol Menu -->
-        <div class="menu-links mt-4">
-            <a href="add_item.php" class="btn btn-success mr-2">Tambah Barang/Kargo Baru</a>
-            <a href="add_container.php" class="btn btn-success mr-2">Tambah Kontainer Baru</a>
-            <a href="add_pelabuhan.php" class="btn btn-success mr-2">Tambah Pelabuhan Baru</a>
-            <a href="add_company.php" class="btn btn-success mr-2">Tambah Perusahaan Baru</a>
-            <a href="new_transaction.php" class="btn btn-success mr-2">Tambah Transaksi Baru</a>
+        <div class="menu-links">
+            <a href="add_item.php" class="btn btn-success">Tambah Barang/Kargo Baru</a>
+            <a href="add_container.php" class="btn btn-success">Tambah Kontainer Baru</a>
+            <a href="add_pelabuhan.php" class="btn btn-success">Tambah Pelabuhan Baru</a>
+            <a href="add_company.php" class="btn btn-success">Tambah Perusahaan Baru</a>
+            <a href="new_transaction.php" class="btn btn-success">Tambah Transaksi Baru</a>
             <a href="transaction_list.php" class="btn btn-info">Lihat Semua Transaksi</a>
         </div>
+
+
 
         <!-- Daftar Transaksi Terbaru -->
         <h2 class="mt-5">Transaksi Terbaru</h2>
